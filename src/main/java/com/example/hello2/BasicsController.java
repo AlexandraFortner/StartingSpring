@@ -88,4 +88,29 @@ public class BasicsController {
             return null;
         }
     }
+
+    // (String) -> Int
+    // Returns the number of points for the corresponding
+    // scoring action in American football.
+    // An extra point kick is worth 1 point.
+    // An extra point conversion is worth 2 points.
+    // A safety is worth 2 points.
+    // A field goal is worth 3 points.
+    // A touchdown is worth 6 points.
+    @GetMapping("/footballPoints")
+    public int footballPoints(@RequestParam String scoringAction) {
+        if (scoringAction.equals("eKick")) {
+            return 1;
+        } else if (scoringAction.equals("eConv")) {
+            return 2;
+        } else if (scoringAction.equals("safety")) {
+            return 2;
+        } else if (scoringAction.equals("fg")) {
+            return 3;
+        } else if (scoringAction.equals("td")) {
+            return 6;
+        } else {
+            return 0;
+        }
+    }
 }
