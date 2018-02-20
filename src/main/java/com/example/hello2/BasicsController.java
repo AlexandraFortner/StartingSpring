@@ -65,4 +65,27 @@ public class BasicsController {
         }
     }
 
+    // Int -> String
+    // Return the appropriate number of stars for the users score.
+    // 1 stars for scores less than 1000 points
+    // 2 stars for scores less than 5000 points
+    // 3 stars for scores less than 8000 points
+    // 4 stars for scores less than 10000 points
+    // 5 stars for anything 10000+
+    @GetMapping("/stars")
+    public String stars(@RequestParam int points) {
+        if (points < 1000) {
+            return "*";
+        } else if (points < 5000) {
+            return "**";
+        } else if (points < 8000) {
+            return "***";
+        } else if (points < 10000) {
+            return "****";
+        } else if (points > 10000) {
+            return "*****";
+        } else {
+            return null;
+        }
+    }
 }
