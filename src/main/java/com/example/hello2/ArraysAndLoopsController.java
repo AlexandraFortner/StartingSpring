@@ -20,4 +20,12 @@ public class ArraysAndLoopsController {
         }
         return list;
     }
-}
+
+    // Returns the sum of everything in L.
+    @GetMapping("/sum")
+    public Integer sum(@RequestParam int[] l) {
+        int total = 0;
+        for (int i : l) total += i;
+            return total;
+        }
+    }
