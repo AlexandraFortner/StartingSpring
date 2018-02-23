@@ -91,4 +91,22 @@ public class ArraysAndLoopsController {
         }
         return result;
     }
+
+
+    // String -> Item
+    // Return an inventory item encoded in the provided string.
+    // An Item is a array of 3 elements:
+    //     - name
+    //     - price we paid
+    //     - price we are charging
+    // The provided string seperates each of these pieces with a tab.
+    @GetMapping("/parseInventoryString")
+    public ArrayList<String> parseInventoryString(@RequestParam String s) {
+        String[] words = s.split("\\s");
+        ArrayList<String> result = new ArrayList<>();
+        for (String t : words) {
+            result.add(s);
+        }
+        return result;
+    }
 }
