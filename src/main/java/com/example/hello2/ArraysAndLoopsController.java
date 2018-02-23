@@ -78,4 +78,17 @@ public class ArraysAndLoopsController {
         }
         return result;
     }
+
+    // Returns the mentions used in the provided tweet.
+    @GetMapping("/mentions")
+    public ArrayList<String> mentions(@RequestParam String tweet) {
+        String[] words = tweet.split("\\s");
+        ArrayList<String> result = new ArrayList<>();
+        for (String t : words) {
+            if (t.contains("@")) {
+                result.add(t);
+            }
+        }
+        return result;
+    }
 }
