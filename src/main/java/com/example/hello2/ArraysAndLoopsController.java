@@ -64,4 +64,18 @@ public class ArraysAndLoopsController {
             new_list.add(numbers - minimum);
         } return  new_list;
     }
+
+
+    // Returns the hashtags used in the provided tweet.
+    @GetMapping("/hashtags")
+    public ArrayList<String> hashtags(@RequestParam String tweet) {
+        String[] words = tweet.split("\\s");
+        ArrayList<String> result = new ArrayList<>();
+        for (String t : words) {
+            if (t.contains("#")) {
+                result.add(t);
+            }
+        }
+        return result;
+    }
 }
