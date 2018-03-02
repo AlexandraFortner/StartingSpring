@@ -3,9 +3,6 @@ package com.example.hello2;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.*;
-
-
-@RestController
 public class ArraysAndLoopsController {
 
     // Returns the last three elements in L.
